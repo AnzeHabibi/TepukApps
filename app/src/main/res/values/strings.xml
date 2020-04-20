@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Tepuk Apps</string>
+    <string name="slogan">Wisata Jadi Lebih Asyik!</string>
+    <string name="signin">SIGN IN</string>
+    <string name="signup">SIGN UP</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="bio">Your Passion</string>
+    <string name="countinue">Continue</string>
+    <string name="nama">Abiyyu Habibi</string>
+</resources>
