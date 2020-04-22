@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrackingAct">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_back"
+            android:tint="#fff"/>
+
+
+        <TextView
+            android:id="@+id/textorder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:text="Tracking Barang"
+            android:textColor="#fff"
+            android:fontFamily="@font/montserratbold"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/bgPrimary"
+        app:layout_constraintTop_toBottomOf="@id/layout1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F9F9F9"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/layout1"
+        app:layout_constraintBottom_toTopOf="@id/view2"/>
+
+    <TextView
+        android:id="@+id/estimasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Estimasi Waktu"
+        android:textAllCaps="true"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/nomororder"
+        app:layout_constraintTop_toBottomOf="@id/layout1"
+        android:textColor="#AFAFAF"/>
+    <TextView
+        android:id="@+id/nomororder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="kode paket"
+        android:textAllCaps="true"
+        android:fontFamily="@font/montserratregular"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout1"
+        app:layout_constraintStart_toEndOf="@id/estimasi"
+        android:textColor="#AFAFAF"/>
+
+    <TextView
+        android:id="@+id/estimasi1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="3 hari"
+        android:textAllCaps="true"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/nomororder"
+        app:layout_constraintTop_toBottomOf="@id/estimasi"
+        android:textColor="@color/BlackPrimary"/>
+
+    <TextView
+        android:id="@+id/nomororder1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="#4b177u"
+        android:textAllCaps="true"
+        android:fontFamily="@font/montserratbold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nomororder"
+        app:layout_constraintStart_toEndOf="@id/estimasi"
+        android:textColor="@color/BlackPrimary"/>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#e9e9e9"
+        app:layout_constraintTop_toBottomOf="@id/estimasi1"
+        android:layout_marginTop="16dp"
+        />
+
+    <View
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/status"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        app:layout_constraintTop_toTopOf="@id/bungkus"
+        app:layout_constraintBottom_toBottomOf="@id/bungkus"
+        android:background="@drawable/status2"
+        />
+
+    <ImageView
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/bungkus"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/box"
+        app:layout_constraintTop_toBottomOf="@id/view2"
+        app:layout_constraintStart_toEndOf="@id/status"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dikemas"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Barang Sedang Dikemas"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserratbold"
+        app:layout_constraintBottom_toTopOf="@id/status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bungkus"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dikemas1"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Pupukmu sedang dikemas penjual"
+        android:textSize="12sp"
+        android:fontFamily="@font/montserratlight"
+        app:layout_constraintTop_toBottomOf="@id/dikemas"
+        app:layout_constraintBottom_toTopOf="@id/status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bungkus"/>
+
+    <View
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/status2"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        app:layout_constraintTop_toTopOf="@id/antar"
+        app:layout_constraintBottom_toBottomOf="@id/antar"
+        android:background="@drawable/status2"
+        />
+
+    <ImageView
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/antar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/dikirim"
+        app:layout_constraintTop_toBottomOf="@id/bungkus"
+        app:layout_constraintStart_toEndOf="@id/status2"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/diantar"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Barang Sedang Dikirim"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserratbold"
+        app:layout_constraintBottom_toTopOf="@id/status2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/antar"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/diantar2"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Pupukmu sedang dikirim driver"
+        android:textSize="12sp"
+        android:fontFamily="@font/montserratlight"
+        app:layout_constraintTop_toBottomOf="@id/diantar"
+        app:layout_constraintBottom_toTopOf="@id/status2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/antar"/>
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@id/status"
+        app:layout_constraintStart_toStartOf="@id/status2"
+        app:layout_constraintEnd_toEndOf="@id/status2"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/status2"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:id="@+id/status3"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        app:layout_constraintTop_toTopOf="@id/sampai"
+        app:layout_constraintBottom_toBottomOf="@id/sampai"
+        android:background="@drawable/status"
+        />
+
+    <ImageView
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/sampai"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/sampai"
+        app:layout_constraintTop_toBottomOf="@id/antar"
+        app:layout_constraintStart_toEndOf="@id/status3"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/diterima"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Barang Sudah Sampai"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserratbold"
+        app:layout_constraintBottom_toTopOf="@id/status3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/sampai"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/diterima2"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Pupukmu sudah sampai ditanganmu"
+        android:textSize="12sp"
+        android:fontFamily="@font/montserratlight"
+        app:layout_constraintTop_toBottomOf="@id/diterima"
+        app:layout_constraintBottom_toTopOf="@id/status3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/sampai"/>
+
+
+    <View
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@id/status2"
+        app:layout_constraintStart_toStartOf="@id/status3"
+        app:layout_constraintEnd_toEndOf="@id/status3"
+        android:background="#757575"
+        app:layout_constraintBottom_toTopOf="@id/status3"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
