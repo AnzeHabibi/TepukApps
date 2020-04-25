@@ -1,0 +1,3 @@
+[submodule "TepukLaravel"]
+	path = TepukLaravel
+	url = https://github.com/KillerQueen59/TepukLaravel
