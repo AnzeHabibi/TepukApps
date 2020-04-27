@@ -132,7 +132,7 @@
                     android:background="@drawable/btnmines" />
 
                 <TextView
-                    android:id="@+id/jml_ticket"
+                    android:id="@+id/jml_pupuk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
@@ -208,6 +208,19 @@
                 android:text="Harga dari pupuk anda"
                 android:textColor="#636161"
                 android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtharga"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:text="Rp.44.000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
+                android:textColor="@color/BluePrimary"
+                android:textSize="16dp" />
+
 
 
         </LinearLayout>

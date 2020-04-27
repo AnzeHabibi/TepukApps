@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TrackingAct"></activity>
+        <activity android:name=".SuccesBuy"></activity>
+        <activity android:name=".TrackingAct" />
         <activity android:name=".PaymentAct" />
         <activity android:name=".SignUp2" />
         <activity android:name=".SuccerRegister" />
