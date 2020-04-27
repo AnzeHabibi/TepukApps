@@ -48,17 +48,23 @@
                 android:textSize="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <EditText
-                android:id="@+id/xusername"
-                android:inputType="text"
-                android:fontFamily="@font/montserratlight"
-                android:lineSpacingExtra="1dp"
-                android:textColor="@color/BlackPrimary"
-                android:paddingLeft="12dp"
-                android:hint="name user"
-                android:background="@drawable/bg_input_edit"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutUsername">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/xusername"
+                    android:inputType="text"
+                    android:fontFamily="@font/montserratlight"
+                    android:lineSpacingExtra="1dp"
+                    android:textColor="@color/BlackPrimary"
+                    android:paddingLeft="12dp"
+                    android:hint="name user"
+                    android:background="@drawable/bg_input_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
 
         </LinearLayout>
         <LinearLayout
@@ -77,19 +83,25 @@
                 android:text="@string/password"
                 android:textColor="@color/GrayFamilly"
                 android:textSize="20dp" />
-
-            <EditText
-                android:id="@+id/xpassword"
-                android:inputType="textPassword"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/montserratlight"
-                android:lineSpacingExtra="1dp"
-                android:textColor="@color/BlackPrimary"
-                android:paddingLeft="12dp"
-                android:hint="password"
-                android:background="@drawable/bg_input_edit"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutPassword"
+                app:passwordToggleEnabled="true"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/xpassword"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/montserratlight"
+                    android:lineSpacingExtra="1dp"
+                    android:textColor="@color/BlackPrimary"
+                    android:paddingLeft="12dp"
+                    android:hint="password"
+                    android:background="@drawable/bg_input_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </LinearLayout>

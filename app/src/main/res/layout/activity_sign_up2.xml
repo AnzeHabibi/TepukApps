@@ -72,17 +72,23 @@
                 android:textSize="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-            <EditText
-                android:id="@+id/xusername"
-                android:inputType="text"
-                android:fontFamily="@font/montserratlight"
-                android:lineSpacingExtra="1dp"
-                android:textColor="@color/BlackPrimary"
-                android:paddingLeft="12dp"
-                android:hint="nama panjang"
-                android:background="@drawable/bg_input_edit"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutName">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:inputType="text"
+                    android:fontFamily="@font/montserratlight"
+                    android:lineSpacingExtra="1dp"
+                    android:textColor="@color/BlackPrimary"
+                    android:paddingLeft="12dp"
+                    android:hint="nama panjang"
+                    android:background="@drawable/bg_input_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
 
         </LinearLayout>
         <LinearLayout
@@ -101,19 +107,22 @@
                 android:text="Alamat "
                 android:textColor="@color/GrayFamilly"
                 android:textSize="20dp" />
-
-            <EditText
-                android:id="@+id/xpassword"
-                android:inputType="text"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/montserratlight"
-                android:lineSpacingExtra="1dp"
-                android:textColor="@color/BlackPrimary"
-                android:paddingLeft="12dp"
-                android:hint="Alamat"
-                android:background="@drawable/bg_input_edit"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutAddress">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address"
+                    android:inputType="text"
+                    android:fontFamily="@font/montserratlight"
+                    android:lineSpacingExtra="1dp"
+                    android:textColor="@color/BlackPrimary"
+                    android:paddingLeft="12dp"
+                    android:hint="nama panjang"
+                    android:background="@drawable/bg_input_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </LinearLayout>
@@ -133,19 +142,23 @@
                 android:text="No Telepon"
                 android:textColor="@color/GrayFamilly"
                 android:textSize="20dp" />
-
-            <EditText
-                android:id="@+id/email"
-                android:inputType="textPhonetic"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/montserratlight"
-                android:lineSpacingExtra="1dp"
-                android:textColor="@color/BlackPrimary"
-                android:paddingLeft="12dp"
-                android:hint="no telepon"
-                android:background="@drawable/bg_input_edit"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/layoutPhone">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone"
+                    android:inputType="textPhonetic"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/montserratlight"
+                    android:lineSpacingExtra="1dp"
+                    android:textColor="@color/BlackPrimary"
+                    android:paddingLeft="12dp"
+                    android:hint="no telepon"
+                    android:background="@drawable/bg_input_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </LinearLayout>
