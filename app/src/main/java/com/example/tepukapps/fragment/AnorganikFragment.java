@@ -48,7 +48,7 @@ public class AnorganikFragment extends Fragment {
         return view;
     }
     private void init() {
-        recyclerView = view.findViewById(R.id.rvOrganik);
+        recyclerView = view.findViewById(R.id.rvAnorganik);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         getPupuk();

@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/pupuk"
+        android:src="@drawable/organik"
 
         tools:ignore="MissingConstraints" />
 
@@ -50,7 +50,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/foto_pupuk"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -284,7 +283,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserratlight"
-                android:text="Pupuk adalah material yang ditambahkan pada media tanam atau tanaman untuk mencukupi kebutuhan hara yang diperlukan tanaman sehingga mampu berproduksi dengan baik. Material pupuk dapat berupa bahan organik ataupun non-organik. Pupuk berbeda dari suplemen"
+                android:text="Pupuk adalah material yang ditambahkan pada media tanam atau tanaman untuk mencukupi kebutuhan hara yang diperlukan tanaman sehingga mampu berproduksi dengan baik. Material pupuk dapat berupa bahan pupuk ataupun non-pupuk. Pupuk berbeda dari suplemen"
                 android:textColor="#636161"
                 android:textSize="12sp" />
 

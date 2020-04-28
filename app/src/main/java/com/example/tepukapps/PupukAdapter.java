@@ -36,6 +36,7 @@ public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull PupukAdapter.ViewHolder holder, int position) {
         Pupuk pupuk = pupuks.get(position);
+        Picasso.get().load(Constant.URL+"storage/pupuk/"+pupuk.getPhoto()).into(holder.fotoPupuk);
         holder.namaPupuk.setText(pupuk.getName());
         holder.hargaPupuk.setText(Integer.toString(pupuk.getPrice()));
     }
@@ -55,7 +56,7 @@ public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> 
             super(itemView);
             namaPupuk = itemView.findViewById(R.id.namaPupuk);
             hargaPupuk = itemView.findViewById(R.id.hargaPupuk);
-            fotoPupuk = itemView.findViewById(R.id.foto_pupuk);
+            fotoPupuk = itemView.findViewById(R.id.imagePupuk);
             btnLihat = itemView.findViewById(R.id.btnLihat);
         }
     }
