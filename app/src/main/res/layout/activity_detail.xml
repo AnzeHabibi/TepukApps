@@ -88,7 +88,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserratlight"
+            android:fontFamily="@font/montserratregular"
             android:text="Informasi Singkat"
             android:textColor="@color/BlackPrimary"
             android:textSize="20sp" />
@@ -133,7 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Harga Pupuk"
-                    android:fontFamily="@font/montserratlight"
+                    android:fontFamily="@font/montserratregular"
                     android:textColor="@color/BlackPrimary"
                     android:textSize="16sp" />
 
@@ -174,7 +174,7 @@
                     android:id="@+id/stok"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserratlight"
+                    android:fontFamily="@font/montserratregular"
                     android:textColor="@color/BlackPrimary"
                     android:textSize="16sp" />
 
@@ -215,7 +215,7 @@
                     android:id="@+id/jenis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserratlight"
+                    android:fontFamily="@font/montserratregular"
                     android:textColor="@color/BlackPrimary"
                     android:textSize="16sp" />
 
@@ -247,7 +247,7 @@
                 android:id="@+id/komposisi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserratlight"
+                android:fontFamily="@font/montserratregular"
                 android:textColor="@color/BlackPrimary"
                 android:textSize="16sp" />
 
@@ -271,7 +271,7 @@
                 android:id="@+id/desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserratlight"
+                android:fontFamily="@font/montserratregular"
                 android:textColor="@color/BlackPrimary"
                 android:textSize="16sp" />
 
