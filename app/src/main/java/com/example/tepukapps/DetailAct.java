@@ -18,15 +18,9 @@ public class DetailAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        btn_continue = findViewById(R.id.btn_continue);
+        btn_continue = findViewById(R.id.btn_buy);
 
-        btn_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent back = new Intent(DetailAct.this, GetStarted.class);
-                startActivity(back);
-            }
-        });
+
 
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override

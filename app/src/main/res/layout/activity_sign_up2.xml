@@ -148,7 +148,7 @@
                 android:id="@+id/layoutPhone">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone"
-                    android:inputType="textPhonetic"
+                    android:inputType="phone"
                     android:layout_marginBottom="24dp"
                     android:fontFamily="@font/montserratlight"
                     android:lineSpacingExtra="1dp"
