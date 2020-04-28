@@ -6,5 +6,7 @@ public class Constant {
     public static final String LOGIN = HOME + "login";
     public static final String REGISTER1 = HOME + "register1";
     public static final String REGISTER2 = HOME + "register2";
+    public static final String ORGANIK = HOME + "organik";
+    public static final String ANORGANIK = HOME + "anorganik";
 
 }

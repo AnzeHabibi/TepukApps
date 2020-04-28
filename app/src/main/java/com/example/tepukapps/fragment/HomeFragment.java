@@ -2,6 +2,8 @@ package com.example.tepukapps.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -56,6 +58,13 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getContext(), mImagesTitle[position], Toast.LENGTH_SHORT).show();
             }
         });
+
+        return  view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         tabLayout = getActivity().findViewById(R.id.tabLayout);
         viewPager = getActivity().findViewById(R.id.viewPager);
         adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
@@ -63,7 +72,5 @@ public class HomeFragment extends Fragment {
         adapter.AddFragment(new AnorganikFragment(),"Anorganik");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-
-        return  view;
     }
 }

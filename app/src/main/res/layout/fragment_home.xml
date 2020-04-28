@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".fragment.HomeFragment">
 
-    <LinearLayout
+
+    <FrameLayout
         android:paddingEnd="10dp"
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="#00F2A9"
-        android:gravity="right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,20 +22,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="120dp"
-            android:layout_marginEnd="120dp"
-            android:gravity=""
+            android:layout_gravity="center"
+            android:gravity="center"
             android:text="@string/home"
             android:textColor="#fff"
             android:textSize="25sp" />
         <ImageView
+            android:layout_gravity="right"
             android:id="@+id/cartButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="10dp"
             android:src="@drawable/cart" />
 
-    </LinearLayout>
+    </FrameLayout>
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
@@ -47,11 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:layout_constraintVertical_bias="0.0">
-        <TextView
-            android:gravity="center"
-            android:text="Tempat Carousel"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
     </com.synnapps.carouselview.CarouselView>
 
@@ -69,7 +64,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
