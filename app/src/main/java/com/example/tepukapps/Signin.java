@@ -146,7 +146,7 @@ public class Signin extends AppCompatActivity {
                         editor.apply();
                         //if success
                         Toast.makeText(Signin.this, "Login Success", Toast.LENGTH_SHORT).show();
-                        Intent gotodetail = new Intent(Signin.this, DetailAct.class);
+                        Intent gotodetail = new Intent(Signin.this, HomeActivity.class);
                         startActivity(gotodetail);
                     }
                     else{
