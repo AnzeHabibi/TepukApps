@@ -27,7 +27,7 @@
             >
 
     <ImageView
-        android:id="@+id/foto_pupuk"
+        android:id="@+id/img_pupuk"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:scaleType="centerCrop"
@@ -129,7 +129,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txt_harga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Harga Pupuk"
@@ -138,6 +137,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/txt_harga"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="24dp"
                     android:layout_width="wrap_content"
@@ -171,7 +171,6 @@
 
                 <TextView
                     android:text="Stok Pupuk"
-                    android:id="@+id/stok"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserratregular"
@@ -179,6 +178,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/txt_stok"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="24dp"
                     android:layout_width="wrap_content"
@@ -212,7 +212,6 @@
 
                 <TextView
                     android:text="Jenis Pupuk"
-                    android:id="@+id/jenis"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserratregular"
@@ -220,6 +219,7 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/txt_jenis"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="24dp"
                     android:layout_width="wrap_content"
@@ -252,7 +252,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/komposisi2"
+                android:id="@+id/txt_komposisi"
                 android:textAlignment="textStart"
                 android:lineSpacingExtra="2dp"
                 android:layout_marginTop="8dp"
@@ -276,6 +276,7 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/txt_desc"
                 android:textAlignment="textStart"
                 android:lineSpacingExtra="2dp"
                 android:layout_marginTop="8dp"
