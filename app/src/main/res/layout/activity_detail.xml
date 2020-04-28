@@ -243,6 +243,30 @@
             android:orientation="vertical">
 
             <TextView
+                android:text="Komposisi Pupuk"
+                android:id="@+id/komposisi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratlight"
+                android:textColor="@color/BlackPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/komposisi2"
+                android:textAlignment="textStart"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratlight"
+                android:text="Kandungan hara utama : N (Nitrogen)\nKadar hara : 45-47 %\nRumus Kimia : CO(NH2)2\nIndek Garam (IG) : 75,40\nWarna : Putih\nBentuk : Tepung kasar\nStruktur : Agak keras\nHigroskopisitas : Tinggi\nKelarutan : Tinggi\n
+"
+                android:textColor="#636161"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_marginTop="12dp"
                 android:text="Deskripsi Pupuk"
                 android:id="@+id/desc"
                 android:layout_width="wrap_content"
