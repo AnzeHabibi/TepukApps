@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Tepuk Apps</string>
-    <string name="slogan">Wisata Jadi Lebih Asyik!</string>
     <string name="signin">SIGN IN</string>
     <string name="signup">SIGN UP</string>
     <string name="username">Username</string>
