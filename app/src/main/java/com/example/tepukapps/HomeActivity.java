@@ -1,9 +1,5 @@
 package com.example.tepukapps;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -13,6 +9,10 @@ import com.example.tepukapps.fragment.ActivityFragment;
 import com.example.tepukapps.fragment.HistoryFragment;
 import com.example.tepukapps.fragment.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
@@ -26,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        Loading Loading = new Loading(HomeActivity.this);
         getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,new HomeFragment()).commit();
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
     }

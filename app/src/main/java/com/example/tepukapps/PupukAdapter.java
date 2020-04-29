@@ -1,5 +1,6 @@
 package com.example.tepukapps;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -69,10 +70,13 @@ public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> 
             hargaPupuk = itemView.findViewById(R.id.hargaPupuk);
             fotoPupuk = itemView.findViewById(R.id.imagePupuk);
             btnLihat = itemView.findViewById(R.id.btnLihat);
+            final Loading Loading = new Loading((Activity) context);
+
 
             btnLihat.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    Loading.startLoading();
                     Intent detail = new Intent(context, DetailAct.class);
                     context.startActivity(detail);
                 }
