@@ -1,7 +1,7 @@
 package com.example.tepukapps;
 
 import android.content.Context;
-import android.media.Image;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,13 +9,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.tepukapps.model.Pupuk;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> {
     private Context context;
@@ -39,6 +39,17 @@ public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> 
         Picasso.get().load(Constant.URL+"storage/pupuk/"+pupuk.getPhoto()).into(holder.fotoPupuk);
         holder.namaPupuk.setText(pupuk.getName());
         holder.hargaPupuk.setText(Integer.toString(pupuk.getPrice()));
+
+        final String getNamaPupuk = pupuk.getName();
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent detail = new Intent(context, DetailAct.class);
+                detail.putExtra("nama_pupuk", getNamaPupuk);
+                context.startActivity(detail);
+            }
+        });
+
     }
 
     @Override
@@ -58,6 +69,17 @@ public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> 
             hargaPupuk = itemView.findViewById(R.id.hargaPupuk);
             fotoPupuk = itemView.findViewById(R.id.imagePupuk);
             btnLihat = itemView.findViewById(R.id.btnLihat);
+
+            btnLihat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent detail = new Intent(context, DetailAct.class);
+                    context.startActivity(detail);
+                }
+            });
+
+
         }
+
     }
 }
