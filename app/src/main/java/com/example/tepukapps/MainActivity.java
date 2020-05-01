@@ -65,15 +65,7 @@ public class MainActivity extends AppCompatActivity {
         app_logo.startAnimation(app_splash);
         app_sub.startAnimation(btt);
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent gogetstarted = new Intent(MainActivity.this, GetStarted.class);
-                startActivity(gogetstarted);
-                finish();
-            }
-        },2000);
+
     }
     private void isFirstTime(){
         SharedPreferences preferences = getApplication().getSharedPreferences("onBoard", Context.MODE_PRIVATE);
@@ -85,8 +77,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this,HomeActivity.class));
             finish();
         }else {
-            startActivity(new Intent(MainActivity.this,GetStarted.class));
-            finish();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent gogetstarted = new Intent(MainActivity.this, GetStarted.class);
+                    startActivity(gogetstarted);
+                    finish();
+                }
+            },2000);
         }
     }
 
