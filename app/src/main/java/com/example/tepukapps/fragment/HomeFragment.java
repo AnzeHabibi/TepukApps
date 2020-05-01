@@ -72,5 +72,7 @@ public class HomeFragment extends Fragment {
         adapter.AddFragment(new AnorganikFragment(),"Anorganik");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+
     }
 }

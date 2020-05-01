@@ -1,6 +1,9 @@
 package com.example.tepukapps.model;
 
-public class Pupuk {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Pupuk implements Parcelable {
     private int id;
     private String name;
     private String category;
@@ -8,6 +11,32 @@ public class Pupuk {
     private String composition;
     private int price;
     private String photo;
+
+    public Pupuk() {
+
+    }
+
+    protected Pupuk(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        category = in.readString();
+        description = in.readString();
+        composition = in.readString();
+        price = in.readInt();
+        photo = in.readString();
+    }
+
+    public static final Creator<Pupuk> CREATOR = new Creator<Pupuk>() {
+        @Override
+        public Pupuk createFromParcel(Parcel in) {
+            return new Pupuk(in);
+        }
+
+        @Override
+        public Pupuk[] newArray(int size) {
+            return new Pupuk[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -63,5 +92,21 @@ public class Pupuk {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(name);
+        parcel.writeString(category);
+        parcel.writeString(description);
+        parcel.writeString(composition);
+        parcel.writeInt(price);
+        parcel.writeString(photo);
     }
 }

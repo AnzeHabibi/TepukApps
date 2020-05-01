@@ -143,11 +143,10 @@ public class Signin extends AppCompatActivity {
                         editor.putString("email",user.getString("email"));
                         editor.putString("address",user.getString("address"));
                         editor.putString("phonenumber",user.getString("phonenumber"));
+                        editor.putBoolean("isLoggedIn",true);
                         editor.apply();
-                        //if success
+                        startActivity(new Intent(Signin.this,HomeActivity.class));
                         Toast.makeText(Signin.this, "Login Success", Toast.LENGTH_SHORT).show();
-                        Intent gotodetail = new Intent(Signin.this, HomeActivity.class);
-                        startActivity(gotodetail);
                     }
                     else{
                         error();

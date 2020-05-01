@@ -35,19 +35,18 @@ public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PupukAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PupukAdapter.ViewHolder holder, final int position) {
         Pupuk pupuk = pupuks.get(position);
         Picasso.get().load(Constant.URL+"storage/pupuk/"+pupuk.getPhoto()).into(holder.fotoPupuk);
         holder.namaPupuk.setText(pupuk.getName());
         holder.hargaPupuk.setText(Integer.toString(pupuk.getPrice()));
         final Loading Loading = new Loading((Activity) context);
-        final String getNamaPupuk = pupuk.getName();
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.btnLihat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Loading.startLoading();
                 Intent detail = new Intent(context, DetailAct.class);
-                detail.putExtra("nama_pupuk", getNamaPupuk);
+                detail.putExtra(DetailAct.DATA, pupuks.get(position));
                 context.startActivity(detail);
             }
         });
@@ -74,14 +73,7 @@ public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> 
             final Loading Loading = new Loading((Activity) context);
 
 
-            btnLihat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Loading.startLoading();
-                    Intent detail = new Intent(context, DetailAct.class);
-                    context.startActivity(detail);
-                }
-            });
+
 
 
         }

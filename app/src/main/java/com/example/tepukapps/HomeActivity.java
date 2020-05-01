@@ -1,6 +1,8 @@
 package com.example.tepukapps;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -13,6 +15,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
@@ -26,27 +30,24 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        Loading Loading = new Loading(HomeActivity.this);
-        getSupportFragmentManager().beginTransaction().add(R.id.frameLayout,new HomeFragment()).commit();
+        changeFragment(new HomeFragment(),HomeFragment.class.getSimpleName());
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFrag = null;
             switch (item.getItemId()){
                 case R.id.home:
-                    selectedFrag = new HomeFragment();
+                    changeFragment(new HomeFragment(),HomeFragment.class.getSimpleName());
                     break;
                 case R.id.activity:
-                    selectedFrag = new ActivityFragment();
+                    changeFragment(new ActivityFragment(),ActivityFragment.class.getSimpleName());
                     break;
                 case R.id.history:
-                    selectedFrag = new HistoryFragment();
+                    changeFragment(new HistoryFragment(),HistoryFragment.class.getSimpleName());
                     break;
             }
-            getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, selectedFrag).commit();
             return true;
         }
     };
@@ -68,6 +69,29 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         backPressedTime = System.currentTimeMillis();
+    }
+
+    public void changeFragment(Fragment fragment, String tagFragmentName) {
+
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+
+        Fragment currentFragment = mFragmentManager.getPrimaryNavigationFragment();
+        if (currentFragment != null) {
+            fragmentTransaction.hide(currentFragment);
+        }
+
+        Fragment fragmentTemp = mFragmentManager.findFragmentByTag(tagFragmentName);
+        if (fragmentTemp == null) {
+            fragmentTemp = fragment;
+            fragmentTransaction.add(R.id.frameLayout, fragmentTemp, tagFragmentName);
+        } else {
+            fragmentTransaction.show(fragmentTemp);
+        }
+
+        fragmentTransaction.setPrimaryNavigationFragment(fragmentTemp);
+        fragmentTransaction.setReorderingAllowed(true);
+        fragmentTransaction.commitNowAllowingStateLoss();
     }
 
 

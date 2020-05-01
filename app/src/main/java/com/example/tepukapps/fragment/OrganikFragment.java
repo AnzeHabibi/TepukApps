@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,6 +35,7 @@ public class OrganikFragment extends Fragment {
     private ArrayList<Pupuk> arrayList;
     private PupukAdapter adapter;
     Button btnLihat;
+    private ProgressBar progressBar;
 
 
     public OrganikFragment() {
@@ -46,6 +48,7 @@ public class OrganikFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view  = inflater.inflate(R.layout.fragment_organik, container, false);
+        progressBar = view.findViewById(R.id.progressBar);
         init();
         return view;
     }
@@ -82,6 +85,7 @@ public class OrganikFragment extends Fragment {
                         }
                         adapter = new PupukAdapter(getContext(),arrayList);
                         recyclerView.setAdapter(adapter);
+                        progressBar.setVisibility(View.GONE);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

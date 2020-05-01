@@ -2,8 +2,11 @@ package com.example.tepukapps;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -23,6 +26,7 @@ public class GetStarted extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_started);
+
 
         ttb = AnimationUtils.loadAnimation(this, R.anim.ttb);
         btt = AnimationUtils.loadAnimation(this, R.anim.btt);
@@ -57,4 +61,5 @@ public class GetStarted extends AppCompatActivity {
             }
         });
     }
+
 }
