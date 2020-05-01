@@ -32,14 +32,14 @@ import java.util.Map;
 
 public class DetailAct extends AppCompatActivity {
     public static final String DATA ="data";
-
-    Button btn_continue;
-    LinearLayout btn_back;
-    ImageView img_pupuk;
-    TextView txt_harga, txt_stok, txt_jenis, txt_komposisi, txt_desc, title_pupuk;
-    int id,qty,harga;
+    private Button btn_continue;
+    private  LinearLayout btn_back;
+    private  ImageView img_pupuk;
+    private  TextView txt_harga, jmlPupuk, txt_jenis, txt_komposisi, txt_desc, title_pupuk;
+    private  int id,qty,harga,value ;
     private SharedPreferences preferences;
-    String message;
+    private  String message;
+    private Button btnPlus,btnMin;
 
 
     @Override
@@ -63,6 +63,7 @@ public class DetailAct extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.d("value", String.valueOf(value));
                create();
             }
         });
@@ -78,7 +79,38 @@ public class DetailAct extends AppCompatActivity {
         txt_komposisi.setText(pupuk.getComposition());
         harga = pupuk.getPrice();
         txt_harga.setText("Rp."+harga+"/kg");
-        qty = 2;
+        jmlPupuk.setText(String.valueOf(value));
+
+        btnMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DetailAct.this, "CLICKED", Toast.LENGTH_SHORT).show();
+                value-=1;
+                jmlPupuk.setText(String.valueOf(value));
+                if (value<1){
+                    btnMin.setVisibility(View.INVISIBLE);
+                }
+                if(value<10){
+                    btnPlus.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        btnPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                value+=1;
+                jmlPupuk.setText(String.valueOf(value));
+                if (value>0){
+                    btnMin.setVisibility(View.VISIBLE);
+                }
+
+                if(value>9){
+                    btnPlus.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        qty = value;
     }
 
     private void init() {
@@ -89,9 +121,11 @@ public class DetailAct extends AppCompatActivity {
         txt_desc=findViewById(R.id.txt_desc);
         txt_jenis=findViewById(R.id.txt_jenis);
         txt_komposisi=findViewById(R.id.txt_komposisi);
-        txt_stok=findViewById(R.id.txt_stok);
         title_pupuk=findViewById(R.id.title_pupuk);
         img_pupuk=findViewById(R.id.img_pupuk);
+        btnMin = findViewById(R.id.btn_min);
+        btnPlus = findViewById(R.id.btn_pls);
+        jmlPupuk = findViewById(R.id.jml_pupuk);
     }
 
     private void create(){
@@ -133,8 +167,9 @@ public class DetailAct extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> map = new HashMap<>();
+                Log.d("value", String.valueOf(value + " "+ id + " "+ qty));
                 map.put("pupuk_id", String.valueOf(id));
-                map.put("order_qty", String.valueOf(qty));
+                map.put("order_qty", String.valueOf(value));
                 map.put("harga_pupuk", String.valueOf(harga));
                 return map;
             }

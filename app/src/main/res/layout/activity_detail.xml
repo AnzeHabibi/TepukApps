@@ -175,17 +175,38 @@
                     android:fontFamily="@font/montserratregular"
                     android:textColor="@color/BlackPrimary"
                     android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/txt_stok"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="24dp"
+                <LinearLayout
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserratlight"
-                    android:text=""
-                    android:textColor="#636161"
-                    android:textSize="12sp" />
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_min"
+                        android:layout_width="24dp"
+                        android:layout_height="34dp"
+                        android:background="@drawable/btnmines" />
+
+                    <TextView
+                        android:id="@+id/jml_pupuk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="0"
+                        android:textSize="18sp"
+                        android:textColor="@color/BlackPrimary"
+                        android:fontFamily="@font/_mmedium"/>
+
+                    <Button
+                        android:id="@+id/btn_pls"
+                        android:layout_width="25dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/btnpls" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 

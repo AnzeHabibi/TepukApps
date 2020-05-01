@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tolls="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+        <ImageView
+            android:id="@+id/imageCart"
+            android:layout_margin="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="NAMA PUPUK"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/hargaCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Price : 50.000"/>
+        <TextView
+            android:id="@+id/qtyCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Quantity : 5"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Total : "/>
+        <TextView
+            android:id="@+id/totalCart"
+            android:textColor="@color/BluePrimary"
+            android:text="250.000"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <ImageView
+        android:layout_marginTop="50dp"
+
+        android:src="@drawable/ic_delete_black_24dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
+
+</LinearLayout>

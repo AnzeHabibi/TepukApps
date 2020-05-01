@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -31,8 +32,7 @@ public class PaymentAct extends AppCompatActivity {
 
         jmlpupuk.setText(valueJumlahpupuk.toString());
         txttotalharga.setText("Rp."+ valuetotalharga+"");
-        btn_min.animate().alpha(1).setDuration(300).start();
-        btn_min.setEnabled(false);
+
 
         btn_back_detail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,15 +56,13 @@ public class PaymentAct extends AppCompatActivity {
             public void onClick(View view) {
                 valueJumlahpupuk+=1;
                 jmlpupuk.setText(valueJumlahpupuk.toString());
-                if (valueJumlahpupuk>1){
-                    btn_min.animate().alpha(1).setDuration(300).start();
-                    btn_min.setEnabled(true);
+                if (valueJumlahpupuk>0){
+                    btn_min.setVisibility(View.VISIBLE);
                 }
                 valuetotalharga = valueJumlahpupuk*hargapupuk;
                 txttotalharga.setText("Rp."+valuetotalharga+"");
                 if(valueJumlahpupuk>9){
-                    btn_pls.animate().alpha(0).setDuration(300).start();
-                    btn_pls.setEnabled(false);
+                    btn_pls.setVisibility(View.INVISIBLE);
 
                 }
             }
@@ -74,17 +72,16 @@ public class PaymentAct extends AppCompatActivity {
         btn_min.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(PaymentAct.this, "CLICKED", Toast.LENGTH_SHORT).show();
                 valueJumlahpupuk-=1;
                 jmlpupuk.setText(valueJumlahpupuk.toString());
-                if (valueJumlahpupuk<2){
-                    btn_min.animate().alpha(1).setDuration(300).start();
-                    btn_min.setEnabled(false);
+                if (valueJumlahpupuk<1){
+                    btn_min.setVisibility(View.INVISIBLE);
                 }
                 valuetotalharga = valueJumlahpupuk*hargapupuk;
                 txttotalharga.setText("Rp."+valuetotalharga+"");
                 if(valueJumlahpupuk<10){
-                    btn_pls.animate().alpha(0).setDuration(300).start();
-                    btn_pls.setEnabled(true);
+                    btn_pls.setVisibility(View.VISIBLE);
 
                 }
 

@@ -38,18 +38,9 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         changeFragment(new HomeFragment(),HomeFragment.class.getSimpleName());
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
-        rvPupuk = findViewById(R.id.rv_heroes);
-        rvPupuk.setHasFixedSize(true);
-
-        list.addAll(Pupuk_track_data.getListData());
-        showRecyclerList();
     }
 
-    private void showRecyclerList() {
-        rvPupuk.setLayoutManager(new LinearLayoutManager(this));
-        List_pupuk_track_adapter listHeroAdapter = new List_pupuk_track_adapter(list);
-        rvPupuk.setAdapter(listHeroAdapter);
-    }
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override

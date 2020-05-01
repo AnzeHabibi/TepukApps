@@ -145,6 +145,10 @@ public class Signin extends AppCompatActivity {
                         editor.putString("phonenumber",user.getString("phonenumber"));
                         editor.putBoolean("isLoggedIn",true);
                         editor.apply();
+                        SharedPreferences orderPref = getSharedPreferences("order",MODE_PRIVATE);
+                        SharedPreferences.Editor editor1 = orderPref.edit();
+                        editor.putBoolean("repeat",true);
+                        editor.apply();
                         startActivity(new Intent(Signin.this,HomeActivity.class));
                         Toast.makeText(Signin.this, "Login Success", Toast.LENGTH_SHORT).show();
                     }

@@ -9,5 +9,7 @@ public class Constant {
     public static final String ORGANIK = HOME + "organik";
     public static final String ANORGANIK = HOME + "anorganik";
     public static final String CREATE_ORDER = HOME + "orders/create";
+    public static final String LOGOUT = HOME + "logout";
+    public static final String GET_ORDER = HOME + "orders";
 
 }

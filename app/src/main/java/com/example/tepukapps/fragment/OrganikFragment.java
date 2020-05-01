@@ -34,7 +34,6 @@ public class OrganikFragment extends Fragment {
     private View view;
     private ArrayList<Pupuk> arrayList;
     private PupukAdapter adapter;
-    Button btnLihat;
     private ProgressBar progressBar;
 
 
