@@ -1,8 +1,6 @@
 package com.example.tepukapps;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -10,19 +8,27 @@ import android.widget.Toast;
 import com.example.tepukapps.fragment.ActivityFragment;
 import com.example.tepukapps.fragment.HistoryFragment;
 import com.example.tepukapps.fragment.HomeFragment;
+import com.example.tepukapps.model.List_pupuk_track_adapter;
+import com.example.tepukapps.model.Pupuk_track;
+import com.example.tepukapps.model.Pupuk_track_data;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private long backPressedTime;
     private Toast backToast;
-
+    private RecyclerView rvPupuk;
+    private ArrayList<Pupuk_track> list;
 
 
     @Override
@@ -32,6 +38,17 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         changeFragment(new HomeFragment(),HomeFragment.class.getSimpleName());
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+        rvPupuk = findViewById(R.id.rv_heroes);
+        rvPupuk.setHasFixedSize(true);
+
+        list.addAll(Pupuk_track_data.getListData());
+        showRecyclerList();
+    }
+
+    private void showRecyclerList() {
+        rvPupuk.setLayoutManager(new LinearLayoutManager(this));
+        List_pupuk_track_adapter listHeroAdapter = new List_pupuk_track_adapter(list);
+        rvPupuk.setAdapter(listHeroAdapter);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
