@@ -54,7 +54,7 @@ public class PaymentAct extends AppCompatActivity {
         btn_pls.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                valueJumlahpupuk-=1;
+                valueJumlahpupuk+=1;
                 jmlpupuk.setText(valueJumlahpupuk.toString());
                 if (valueJumlahpupuk>1){
                     btn_min.animate().alpha(1).setDuration(300).start();
