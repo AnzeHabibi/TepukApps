@@ -192,7 +192,7 @@
         android:layout_marginStart="32dp"
         app:layout_constraintTop_toTopOf="@id/antar"
         app:layout_constraintBottom_toBottomOf="@id/antar"
-        android:background="@drawable/status2"
+        android:background="@drawable/status"
         />
 
     <ImageView
@@ -243,7 +243,7 @@
         app:layout_constraintTop_toBottomOf="@id/status"
         app:layout_constraintStart_toStartOf="@id/status2"
         app:layout_constraintEnd_toEndOf="@id/status2"
-        android:background="@color/colorPrimary"
+        android:background="#757575"
         app:layout_constraintBottom_toTopOf="@id/status2"
         tools:ignore="MissingConstraints" />
 

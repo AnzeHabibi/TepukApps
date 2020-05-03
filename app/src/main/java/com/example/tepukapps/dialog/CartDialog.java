@@ -54,44 +54,7 @@ public class CartDialog extends AppCompatDialogFragment {
         builder.setPositiveButton("ya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                userPref = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
-                SharedPreferences paymentPref = getActivity().getSharedPreferences("payment", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = paymentPref.edit();
-
-                StringRequest request = new StringRequest(Request.Method.POST, Constant.CREATE_PAYMENT, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-
-                            JSONObject object = new JSONObject(response);
-                            if (object.getBoolean("success")) {
-                                Toast.makeText(context, "Checkout Berhasil", Toast.LENGTH_SHORT).show();
-                                context.startActivity(new Intent(context, PaymentAct.class));
-                            } else {
-                                Toast.makeText(context, "Cart Anda Kosong", Toast.LENGTH_SHORT).show();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                    }
-                }) {
-                    @Override
-                    public Map<String, String> getHeaders() throws AuthFailureError {
-                        String token = userPref.getString("token", "");
-                        HashMap<String, String> map = new HashMap<>();
-                        map.put("Authorization", "Bearer " + token);
-                        Log.d("ojan", String.valueOf(map));
-                        return map;
-                    }
-                };
-                RequestQueue queue = Volley.newRequestQueue(getContext());
-                queue.add(request);
+              context.startActivity(new Intent(context,PaymentAct.class));
             }
         });
 

@@ -51,7 +51,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btn_view_ticket"
+        android:id="@+id/btnTrack"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="48dp"
@@ -68,7 +68,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btn_back_home2"
+        android:id="@+id/btnHome"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginStart="48dp"
@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_view_ticket"
+        app:layout_constraintTop_toBottomOf="@+id/btnTrack"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -89,39 +89,39 @@
                 android:layout_height="55dp"
                 android:src="@drawable/buy"/>
 
-
-
             <LinearLayout
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="50dp"
+                android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn_min"
-                    android:layout_width="24dp"
-                    android:layout_height="34dp"
-                    android:background="@drawable/btnmines" />
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/jml_pupuk"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="24dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:text="0"
-                    android:textSize="18sp"
-                    android:textColor="@color/BlackPrimary"
-                    android:fontFamily="@font/_mmedium"/>
+                    android:fontFamily="@font/montserratlight"
+                    android:text="Jumlah Pesanan"
+                    android:textColor="#636161"
+                    android:textSize="16sp" />
 
-                <Button
-                    android:id="@+id/btn_pls"
-                    android:layout_width="25dp"
-                    android:layout_height="28dp"
-                    android:background="@drawable/btnpls" />
+                <TextView
+                    android:id="@+id/totalPupuk"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="24dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserratlight"
+                    android:textColor="@color/GreenPrimary"
+                    android:textSize="24sp" />
 
             </LinearLayout>
+
+
+
+
 
         </LinearLayout>
 
@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserratlight"
             android:lineSpacingExtra="8dp"
-            android:text="Pupuk ini akan dikirim 3 hari setaah pembayaran anda"
+            android:text="Pembayaran akan dilakukan dengan metode Cash on Delivery"
             android:textColor="#636161"
             android:textSize="16sp" />
 
@@ -168,8 +168,8 @@
             android:textSize="20sp" />
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
@@ -178,21 +178,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserratlight"
-                android:text="Harga dari pupuk anda"
+                android:text="Harga dari pesanan anda"
                 android:textColor="#636161"
                 android:textSize="16dp" />
-
             <TextView
-                android:id="@+id/txtharga"
+                android:gravity="right"
+                android:id="@+id/totalHarga"
                 android:layout_marginLeft="4dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="24dp"
                 android:text="Rp.44.000"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserratbold"
                 android:textColor="@color/BluePrimary"
-                android:textSize="16dp" />
+                android:textSize="25dp" />
+
+
 
 
 
@@ -204,39 +206,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:background="#EDEDED"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="24dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserratlight"
-                android:text="Jumlah harga"
-                android:textColor="#636161"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/totalharga"
-                android:textAlignment="center"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="24dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserratlight"
-                android:textColor="@color/GreenPrimary"
-                android:textSize="24sp" />
-
-        </LinearLayout>
-
-
-
-
     </LinearLayout>
 
     <Button

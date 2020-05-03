@@ -23,7 +23,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
     private Context context;
     private ArrayList<Order> orders;
-    private int total ;
+    private int total ,pupuk;
 
     public OrderAdapter(Context context, ArrayList<Order> orders) {
         this.context = context;
@@ -36,6 +36,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         }
         SharedPreferences userPref = context.getSharedPreferences("order",MODE_PRIVATE);
         SharedPreferences.Editor editor = userPref.edit();
+        editor.putInt("totalPupuk",orders.size());
         editor.putInt("totalPayment",total);
         editor.apply();
 
@@ -54,10 +55,12 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         Log.d("test2", order.getPupukOrder().getName());
         Picasso.get().load(Constant.URL+"storage/pupuk/"+order.getPupukOrder().getPhoto()).into(holder.imageView);
         holder.textJudul.setText("Pupuk "+order.getPupukOrder().getName());
+        int qty = order.getQuantity();
+        pupuk += qty;
         int harga = order.getPupukOrder().getPrice();
         total += harga;
         holder.textHarga.setText("Harga : " + harga);
-        holder.textQty.setText("Jumlah Dibeli :" + (order.getQuantity()));
+        holder.textQty.setText("Jumlah Dibeli :" + (qty));
         holder.textTotal.setText("Rp. " + (order.getTotal()));
 
     }
