@@ -22,7 +22,7 @@
         <ImageView
             android:id="@+id/logout"
             android:layout_margin="10dp"
-            android:src="@drawable/ic_call_missed_outgoing_black_24dp"
+            android:src="@drawable/ic_person_black_24dp"
             android:layout_width="30dp"
             android:layout_height="30dp"/>
         <TextView

@@ -28,7 +28,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignUp2 extends AppCompatActivity {
+public class Signup2 extends AppCompatActivity {
 
     Button btn_continue;
     LinearLayout btn_back;
@@ -55,7 +55,7 @@ public class SignUp2 extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent back = new Intent(SignUp2.this, Signup.class);
+                Intent back = new Intent(Signup2.this, Signup.class);
                 startActivity(back);
             }
         });
@@ -162,8 +162,8 @@ public class SignUp2 extends AppCompatActivity {
                     if (object.getBoolean("success")){
 
                         //if success
-                        Toast.makeText(SignUp2.this, "Register Success", Toast.LENGTH_SHORT).show();
-                        Intent go = new Intent(SignUp2.this, Signin.class);
+                        Toast.makeText(Signup2.this, "Register Success", Toast.LENGTH_SHORT).show();
+                        Intent go = new Intent(Signup2.this, SuccerRegister.class);
                         startActivity(go);
                     }
                 } catch (JSONException e) {

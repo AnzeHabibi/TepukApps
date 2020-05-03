@@ -21,6 +21,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,7 +32,7 @@ public class PaymentAct extends AppCompatActivity {
     LinearLayout btn_back_detail;
     Button btn_payment, btn_pls, btn_min;
     TextView jmlpupuk, totalPupuk,totalHarga;
-    private SharedPreferences userPref;
+    private SharedPreferences userPref,paymentPref;
 
 
 
@@ -73,6 +74,7 @@ public class PaymentAct extends AppCompatActivity {
 
     private void payment() {
         userPref = getSharedPreferences("user", Context.MODE_PRIVATE);
+        paymentPref = getSharedPreferences("payment",Context.MODE_PRIVATE);
 
 
         StringRequest request = new StringRequest(Request.Method.POST, Constant.CREATE_PAYMENT, new Response.Listener<String>() {
@@ -82,6 +84,10 @@ public class PaymentAct extends AppCompatActivity {
 
                     JSONObject object = new JSONObject(response);
                     if (object.getBoolean("success")) {
+                        SharedPreferences.Editor editor = paymentPref.edit();
+                        JSONObject payment = new JSONObject(object.getString("payments"));
+                        editor.putInt("id",payment.getInt("id"));
+                        editor.apply();
                         Toast.makeText(PaymentAct.this, "Checkout Berhasil", Toast.LENGTH_SHORT).show();
                         Intent godetail = new Intent(PaymentAct.this, SuccesBuy.class);
                         startActivity(godetail);

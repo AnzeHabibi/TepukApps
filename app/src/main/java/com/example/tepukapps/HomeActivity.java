@@ -8,9 +8,7 @@ import android.widget.Toast;
 import com.example.tepukapps.fragment.ActivityFragment;
 import com.example.tepukapps.fragment.HistoryFragment;
 import com.example.tepukapps.fragment.HomeFragment;
-import com.example.tepukapps.model.List_pupuk_track_adapter;
-import com.example.tepukapps.model.Pupuk_track;
-import com.example.tepukapps.model.Pupuk_track_data;
+import com.example.tepukapps.model.Shipping;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -20,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class HomeActivity extends AppCompatActivity {
@@ -28,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     private long backPressedTime;
     private Toast backToast;
     private RecyclerView rvPupuk;
-    private ArrayList<Pupuk_track> list;
+    private ArrayList<Shipping> list;
 
 
     @Override

@@ -19,12 +19,13 @@
         <activity android:name=".PaymentAct" >
 
         </activity>
-        <activity android:name=".SignUp2" />
+        <activity android:name=".Signup2" />
         <activity android:name=".SuccerRegister" />
         <activity android:name=".DetailAct" />
         <activity android:name=".Signup" />
         <activity android:name=".Signin" />
         <activity android:name=".GetStarted" />
+        <activity android:name=".ProfileAct"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

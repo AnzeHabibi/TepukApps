@@ -27,7 +27,9 @@ import java.util.Map;
 
 public class SuccesBuy extends AppCompatActivity {
     Button btnTrack,btnHome;
-    private SharedPreferences userPref;
+    private SharedPreferences userPref,paymentPref;
+    int id;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,18 +37,22 @@ public class SuccesBuy extends AppCompatActivity {
         setContentView(R.layout.activity_succes_buy);
         btnTrack = findViewById(R.id.btnTrack);
         btnHome = findViewById(R.id.btnHome);
+        paymentPref = getSharedPreferences("payment",Context.MODE_PRIVATE);
+        id = paymentPref.getInt("id",0);
+        Log.d("kahla", String.valueOf(id));
+
 
         btnTrack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                shipping();
+
             }
         });
 
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SuccesBuy.this,HomeActivity.class));
+                shipping();
             }
         });
     }
@@ -55,16 +61,16 @@ public class SuccesBuy extends AppCompatActivity {
         userPref = getSharedPreferences("user", Context.MODE_PRIVATE);
 
 
-        StringRequest request = new StringRequest(Request.Method.POST, Constant.CREATE_PAYMENT, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, Constant.CREATE_SHIPPING, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
 
                     JSONObject object = new JSONObject(response);
                     if (object.getBoolean("success")) {
-
+                        startActivity(new Intent(SuccesBuy.this,HomeActivity.class));
                     } else {
-
+                        Toast.makeText(SuccesBuy.this, "Shipping Bermasalah", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -85,8 +91,16 @@ public class SuccesBuy extends AppCompatActivity {
                 Log.d("ojan", String.valueOf(map));
                 return map;
             }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<>();
+                map.put("id", String.valueOf(id));
+                return map;
+            }
         };
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
     }
+
 }

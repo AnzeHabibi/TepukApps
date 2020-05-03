@@ -28,6 +28,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.tepukapps.CartActivity;
 import com.example.tepukapps.Constant;
 import com.example.tepukapps.GetStarted;
+import com.example.tepukapps.ProfileAct;
 import com.example.tepukapps.R;
 import com.example.tepukapps.Signin;
 import com.example.tepukapps.ViewPagerAdapter;
@@ -90,7 +91,7 @@ public class HomeFragment extends Fragment {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                logout();
+                startActivity(new Intent(getActivity(), ProfileAct.class));
             }
         });
         cartButton.setOnClickListener(new View.OnClickListener() {
@@ -103,55 +104,7 @@ public class HomeFragment extends Fragment {
         return  view;
     }
 
-    private void logout() {
-        Log.d("kahla", "cantik");
-        StringRequest request = new StringRequest(Request.Method.GET, Constant.LOGOUT, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    Log.d("kahla", "cantik");
-                    JSONObject object = new JSONObject(response);
-                    if (object.getBoolean("success")){
-                        preferences.edit().remove("id").apply();
-                        preferences.edit().remove("name").apply();
-                        preferences.edit().remove("email").apply();
-                        preferences.edit().remove("address").apply();
-                        preferences.edit().remove("phonenumber").apply();
-                        preferences.edit().remove("username").apply();
-                        preferences.edit().remove("password").apply();
-                        preferences.edit().remove("isLoggedIn").apply();
-                        order.edit().remove("totalPaymeny").apply();
-                        order.edit().remove("repeat").apply();
-                        Intent intentLogout = new Intent(getActivity(), GetStarted.class);
-                        intentLogout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intentLogout);
-                        Toast.makeText(getActivity(), object.getString("message"), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getActivity(), "LUL", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
 
-            }
-        }){
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                String token = preferences.getString("token","");
-                HashMap<String,String> map = new HashMap<>();
-                map.put("Authorization","Bearer "+token);
-                Log.d("ojan", String.valueOf(map));
-                return map;
-            }
-        };
-
-        RequestQueue queue = Volley.newRequestQueue(Objects.requireNonNull(getActivity()));
-        queue.add(request);
-
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

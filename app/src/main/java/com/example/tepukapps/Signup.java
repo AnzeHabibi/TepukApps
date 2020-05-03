@@ -9,7 +9,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -168,7 +167,7 @@ public class Signup extends AppCompatActivity {
                         editor.putString("phonenumber",user.getString("phonenumber"));
                         editor.apply();
                         //if success
-                        Intent go = new Intent(Signup.this, SignUp2.class);
+                        Intent go = new Intent(Signup.this, Signup2.class);
                         startActivity(go);
 
                     }

@@ -33,7 +33,7 @@ import java.util.Map;
 public class CartDialog extends AppCompatDialogFragment {
     private Context context;
     private SharedPreferences orderPref;
-    private SharedPreferences userPref;
+    private SharedPreferences paymentPref;
 
     public CartDialog( Context context) {
         this.context = context;
@@ -43,6 +43,7 @@ public class CartDialog extends AppCompatDialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         orderPref = getActivity().getSharedPreferences("order", Context.MODE_PRIVATE);
+        paymentPref = getActivity().getSharedPreferences("payment",Context.MODE_PRIVATE);
         String harga = String.valueOf(orderPref.getInt("totalPayment",0));
         builder.setTitle("Payment Total");
         builder.setMessage("Total Belanja anda sebesar Rp." + harga + "\n Apakah anda ingin melanjutkan?");
@@ -54,7 +55,11 @@ public class CartDialog extends AppCompatDialogFragment {
         builder.setPositiveButton("ya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-              context.startActivity(new Intent(context,PaymentAct.class));
+                SharedPreferences.Editor editor = paymentPref.edit();
+                paymentPref.edit().remove("id").apply();
+                editor.apply();
+                context.startActivity(new Intent(context,PaymentAct.class));
+
             }
         });
 

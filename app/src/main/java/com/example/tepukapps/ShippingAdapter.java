@@ -1,22 +1,22 @@
-package com.example.tepukapps.model;
+package com.example.tepukapps;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.tepukapps.R;
+import com.example.tepukapps.model.Shipping;
 
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class List_pupuk_track_adapter extends RecyclerView.Adapter<List_pupuk_track_adapter.ListViewHolder>{
+public class ShippingAdapter extends RecyclerView.Adapter<ShippingAdapter.ListViewHolder>{
     @NonNull
 
-    private ArrayList<Pupuk_track> listPupuk;
-    public List_pupuk_track_adapter(ArrayList<Pupuk_track> list) {
+    private ArrayList<Shipping> listPupuk;
+    public ShippingAdapter(ArrayList<Shipping> list) {
         this.listPupuk = list;
     }
 

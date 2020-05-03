@@ -1,6 +1,6 @@
 package com.example.tepukapps.model;
 
-public class Pupuk_track {
+public class Shipping {
     private String name;
     private String detail;
     private int photo;

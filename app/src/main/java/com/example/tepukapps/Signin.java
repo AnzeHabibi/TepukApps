@@ -141,6 +141,7 @@ public class Signin extends AppCompatActivity {
                         editor.putString("token",object.getString("token"));
                         editor.putString("name",user.getString("name"));
                         editor.putString("email",user.getString("email"));
+                        editor.putString("username",user.getString("username"));
                         editor.putString("address",user.getString("address"));
                         editor.putString("phonenumber",user.getString("phonenumber"));
                         editor.putBoolean("isLoggedIn",true);
