@@ -44,10 +44,9 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 SharedPreferences user = getApplicationContext().getSharedPreferences("user",Context.MODE_PRIVATE);
                 SharedPreferences order = getApplicationContext().getSharedPreferences("order",Context.MODE_PRIVATE);
-                boolean repeatOrder = order.getBoolean("repeat",false);
                 boolean isLoggedIn = user.getBoolean("isLoggedIn",false);
 
-                if (isLoggedIn&&repeatOrder){
+                if (isLoggedIn){
                     startActivity(new Intent(MainActivity.this,HomeActivity.class));
                     finish();
                 }else {

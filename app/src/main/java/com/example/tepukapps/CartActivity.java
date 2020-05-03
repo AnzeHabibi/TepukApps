@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.tepukapps.dialog.CartDialog;
 import com.example.tepukapps.fragment.CartFragment;
 import com.example.tepukapps.model.Order;
 
@@ -26,17 +27,22 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         getSupportFragmentManager().beginTransaction().add(R.id.frameCart,new CartFragment()).commit();
-        tvTotal = findViewById(R.id.totalPayment);
         SharedPreferences orderPref = Objects.requireNonNull(this.getSharedPreferences("order",MODE_PRIVATE));
         total = orderPref.getInt("totalPayment",0);
-        tvTotal.setText(String.valueOf(total));
+
         btnCheckout = findViewById(R.id.btnCheckout);
         btnCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                openDialog();
             }
         });
 
+    }
+
+
+    private void openDialog() {
+        CartDialog cartDialog = new CartDialog(this);
+        cartDialog.show(getSupportFragmentManager(),"cartDialog");
     }
 }

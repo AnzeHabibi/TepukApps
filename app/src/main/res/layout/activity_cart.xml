@@ -22,24 +22,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:layout_gravity="left|center"
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total Price : "
-            android:textSize="20sp"
-             />
-        <TextView
-            android:layout_marginStart="120dp"
-            android:layout_gravity="left|center"
-            android:id="@+id/totalPayment"
-            android:layout_width="106dp"
-            android:layout_height="34dp"
-            android:textColor="@color/BluePrimary"
-            android:textSize="25sp"
 
-            tools:text="250.000" />
         <Button
             android:layout_marginEnd="30dp"
             android:layout_gravity="right|center"
