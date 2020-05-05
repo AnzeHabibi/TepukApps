@@ -81,6 +81,7 @@
 
 
             <TextView
+                android:gravity="center"
                 android:id="@+id/totalHarga"
                 android:layout_width="158dp"
                 android:layout_height="63dp"
