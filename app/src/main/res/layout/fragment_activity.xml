@@ -14,7 +14,7 @@
             android:id="@+id/rv_heroes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/list_row_item" />
+            tools:listitem="@layout/tracking_item" />
     </RelativeLayout>
 
 </FrameLayout>

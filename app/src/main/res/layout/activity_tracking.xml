@@ -236,6 +236,7 @@
         app:layout_constraintStart_toEndOf="@id/antar"/>
 
     <View
+        android:id="@+id/connect1"
         android:layout_width="4dp"
         android:layout_height="0dp"
         android:layout_marginTop="4dp"
@@ -301,6 +302,7 @@
 
 
     <View
+        android:id="@+id/connect2"
         android:layout_width="4dp"
         android:layout_height="0dp"
         android:layout_marginTop="4dp"

@@ -7,48 +7,37 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tepukapps.model.Shipping;
+
 public class DetailsHistory extends AppCompatActivity {
+    public static final String DATA = "data";
 
     ImageView mainImageView;
-    TextView title, deskripsi, harga, kode;
+    TextView title, harga, kode,status,address,kurir;
 
-    String data1, data2, data3, data4;
-    int myImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_history);
+        init();
+        getData();
+    }
 
-        mainImageView = findViewById(R.id.mainImageView);
-        title = findViewById(R.id.title);
-        deskripsi = findViewById(R.id.deskripsi);
+    private void getData() {
+        Shipping shipping = getIntent().getParcelableExtra(DATA);
+        status.setText(shipping.getStatus());
+        kode.setText(shipping.getPayment().getCodePayment());
+        harga.setText(shipping.getPayment().getAmmountPayment());
+        address.setText(shipping.getUser().getAddress());
+    }
+
+    private void init() {
+        status = findViewById(R.id.status);
+        address = findViewById(R.id.address);
+        kurir = findViewById(R.id.kurir);
         harga = findViewById(R.id.harga);
         kode = findViewById(R.id.kode);
-
-
-        getData();
-        setData();
-    }
-    private void setData(){
-        title.setText(data1);
-        deskripsi.setText(data2);
-        harga.setText(data3);
-        kode.setText(data4);
-        mainImageView.setImageResource(myImage);
-    }
-
-    private void getData(){
-        if(getIntent().hasExtra("myImage") && getIntent().hasExtra("data1") && getIntent().hasExtra("data2")
-                && getIntent().hasExtra("data3") && getIntent().hasExtra("data4")){
-            data1 = getIntent().getStringExtra("data1");
-            data2 = getIntent().getStringExtra("data2");
-            data3 = getIntent().getStringExtra("data3");
-            data4 = getIntent().getStringExtra("data4");
-            myImage = getIntent().getIntExtra("myImage", 1);
-        }else {
-            Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
-        }
     }
 
 
