@@ -14,17 +14,13 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".DetailsHistory"></activity>
         <activity
-            android:name=".History"
-            android:label="@string/title_activity_history"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".HomeActivity"
             android:launchMode="singleTask" />
         <activity android:name=".SuccesBuy" />
         <activity android:name=".TrackingAct" />
         <activity android:name=".CartActivity" />
         <activity android:name=".PaymentAct" />
-        <activity android:name=".SignUp2" />
+        <activity android:name=".Signup2" />
         <activity android:name=".SuccerRegister" />
         <activity android:name=".DetailAct" />
         <activity android:name=".Signup" />

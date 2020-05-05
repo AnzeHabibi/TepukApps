@@ -2,6 +2,7 @@ package com.example.tepukapps;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,22 +10,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tepukapps.model.Shipping;
+
+import java.util.ArrayList;
+
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHolder> {
+    private ArrayList<Shipping> shippings;
+    private Context context;
+    private String status;
 
-    String data1[], data2[], data3[], data4[];
-    int images[];
-    Context context;
-
-    public HistoryAdapter(Context ct,String s1[], String s2[], String s3[], String s4[], int img[]){
-        context = ct;
-        data1 = s1;
-        data2 = s2;
-        data3 = s3;
-        data4 = s4;
-        images = img;
+    public HistoryAdapter(ArrayList<Shipping> shippings, Context context) {
+        this.shippings = shippings;
+        this.context = context;
     }
 
     @NonNull
@@ -37,41 +38,45 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        holder.myText1.setText(data1[position]);
-        holder.harga.setText(data3[position]);
-        holder.myImage.setImageResource(images[position]);
-
-        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+        final Shipping shipping = shippings.get(position);
+        status = shipping.getStatus();
+        holder.status.setText(status);
+        holder.kodePupuk.setText(shipping.getPayment().getCodePayment());
+        holder.hargaPupuk.setText(shipping.getPayment().getAmmountPayment());
+        if (!status.equals("terima")){
+            holder.bgStatus.setBackgroundColor(Color.RED);
+        }
+        holder.datePupuk.setText(shipping.getDate());
+        holder.cvPupuk.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, DetailsHistory.class);
-                intent.putExtra("data1", data1[position]);
-                intent.putExtra("data2", data2[position]);
-                intent.putExtra("data3", data3[position]);
-                intent.putExtra("data4", data4[position]);
-                intent.putExtra("myImage", images[position]);
-                context.startActivity(intent);
+            public void onClick(View view) {
+                Intent intent = new Intent(context,DetailsHistory.class);
+                intent.putExtra(DetailsHistory.DATA,shippings.get(position));
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return shippings.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView myText1, harga;
-        ImageView myImage;
-        ConstraintLayout mainLayout;
+        TextView kodePupuk, hargaPupuk,datePupuk,status;
+        CardView cvPupuk;
+        ImageView bgStatus;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            myText1 = itemView.findViewById(R.id.myText1);
-            harga = itemView.findViewById(R.id.harga);
-            myImage = itemView.findViewById(R.id.myImageView);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
+            bgStatus = itemView.findViewById(R.id.bgStatus);
+            status = itemView.findViewById(R.id.tvStatus);
+            kodePupuk = itemView.findViewById(R.id.kodePupuk);
+            hargaPupuk = itemView.findViewById(R.id.hargaPupuk);
+            hargaPupuk = itemView.findViewById(R.id.totalPupuk);
+            datePupuk = itemView.findViewById(R.id.datePupuk);
+            cvPupuk = itemView.findViewById(R.id.cvHistory);
         }
     }
 }

@@ -103,8 +103,7 @@ public class CartFragment extends Fragment {
                         }
                     }else {
                     }
-                    adapter = new OrderAdapter(getContext(),orders);
-                    recyclerView.setAdapter(adapter);
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();

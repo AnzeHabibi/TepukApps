@@ -13,5 +13,6 @@ public class Constant {
     public static final String GET_ORDER = HOME + "orders";
     public static final String CREATE_PAYMENT = HOME + "payments/create";
     public static final String CREATE_SHIPPING = HOME + "shippings/create";
+    public static final String GET_SHIPPING = HOME + "shippings";
 
 }

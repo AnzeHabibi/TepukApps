@@ -6,34 +6,42 @@
     android:orientation="horizontal"
     android:padding="16dp">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_item_photo"
-        android:layout_width="55dp"
+    <TextView
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        android:text="TIKI"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:id="@+id/ekspedisiShipping"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        tools:src="@android:color/darker_gray" />
+         />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@id/img_item_photo"
-        android:layout_toRightOf="@id/img_item_photo"
+        android:layout_toEndOf="@id/ekspedisiShipping"
+        android:layout_toRightOf="@id/ekspedisiShipping"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/tv_item_name"
+            android:textColor="@color/BluePrimary"
+            android:id="@+id/kodePemesanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="@string/pupuk_name" />
+            tools:text="Kode" />
         <TextView
-            android:id="@+id/tv_item_detail"
+            android:id="@+id/tanggalPemesanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            tools:text="@string/detail" />
+            tools:text="Date" />
     </LinearLayout>
 </RelativeLayout>
