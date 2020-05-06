@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.tepukapps.Constant;
+import com.example.tepukapps.HistoryAdapter;
 import com.example.tepukapps.OrderAdapter;
 import com.example.tepukapps.R;
 import com.example.tepukapps.model.Order;
@@ -80,6 +81,7 @@ public class CartFragment extends Fragment {
                         Log.d("test", "IM HERE 1");
                         JSONArray array = new JSONArray(object.getString("orders"));
 
+
                         for (int i = 0 ; i<array.length();i++){
                             JSONObject orderO  = array.getJSONObject(i);
                             JSONObject pupukO = orderO.getJSONObject("pupuk");
@@ -101,6 +103,10 @@ public class CartFragment extends Fragment {
                             orders.add(order);
                             Log.d("test", (order.getTotal())+"data "  + i );
                         }
+                        Log.d("test", "FUCK  "+ orders.size());
+
+                        adapter = new OrderAdapter(getContext(), orders);
+                        recyclerView.setAdapter(adapter);
                     }else {
                     }
 

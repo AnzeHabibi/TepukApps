@@ -2,6 +2,7 @@ package com.example.tepukapps;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +20,12 @@ public class ShippingAdapter extends RecyclerView.Adapter<ShippingAdapter.ListVi
 
     private ArrayList<Shipping> shippings;
     private Context context;
+    private SharedPreferences trackPref;
 
     public ShippingAdapter(ArrayList<Shipping> shippings, Context context) {
         this.shippings = shippings;
         this.context = context;
+
     }
 
     public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,17 +35,28 @@ public class ShippingAdapter extends RecyclerView.Adapter<ShippingAdapter.ListVi
 
     @Override
     public void onBindViewHolder(@NonNull ListViewHolder holder, final int position) {
+        trackPref = context.getApplicationContext().getSharedPreferences("track",Context.MODE_PRIVATE);
+        final SharedPreferences.Editor editor = trackPref.edit();
         Shipping shipping = shippings.get(position);
-        holder.kodePemesanan.setText(shipping.getPayment().getCodePayment());
-        holder.ekspedisiShipping.setText(shipping.getKurir());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context,TrackingAct.class);
-                intent.putExtra(TrackingAct.DATA,shippings.get(position));
-                context.startActivity(intent);
-            }
-        });
+        if (!shipping.getStatus().equals("hapus")){
+            final String code = shipping.getPayment().getCodePayment();
+            holder.kodePemesanan.setText(code);
+            holder.ekspedisiShipping.setText(shipping.getKurir());
+            holder.datePemesanan.setText(shipping.getDate());
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    editor.putString("code", code);
+                    editor.apply();
+                    Intent intent = new Intent(context, TrackingAct.class);
+                    intent.putExtra(TrackingAct.DATA, shippings.get(position));
+                    context.startActivity(intent);
+                }
+            });
+        }else {
+            removeAt(position);
+        }
+
     }
 
     @Override
@@ -58,6 +72,11 @@ public class ShippingAdapter extends RecyclerView.Adapter<ShippingAdapter.ListVi
             kodePemesanan = itemView.findViewById(R.id.kodePemesanan);
             datePemesanan = itemView.findViewById(R.id.tanggalPemesanan);
         }
+    }
+    public void removeAt(int position) {
+        shippings.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, shippings.size());
     }
 
 }

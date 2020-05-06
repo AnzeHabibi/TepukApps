@@ -65,7 +65,7 @@ public class HistoryFragment extends Fragment {
     }
 
     private void init() {
-        recyclerView = view.findViewById(R.id.rvCart);
+        recyclerView = view.findViewById(R.id.rvHistory);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         getShipping();
@@ -81,21 +81,20 @@ public class HistoryFragment extends Fragment {
                     JSONObject object = new JSONObject(response);
                     if (object.getBoolean("success")){
                         JSONArray array = new JSONArray(object.getString("shipping"));
-                        JSONObject user = new JSONObject(object.getString("user"));
-                        User user1 = new User();
-                        user1.setAddress(user.getString("address"));
+
                         for (int i = 0;i<array.length();i++){
                             JSONObject shipping = array.getJSONObject(i);
                             JSONObject payment = shipping.getJSONObject("payment");
 
+
                             Payment payment1 = new Payment();
                             payment1.setId(payment.getInt("id"));
                             payment1.setCodePayment(payment.getString("payment_code"));
+                            payment1.setAmmountPayment(payment.getInt("payment_ammount"));
 
                             Shipping shipping1 = new Shipping();
                             shipping1.setId(shipping.getInt("id"));
                             shipping1.setPayment(payment1);
-                            shipping1.setUser(user1);
                             shipping1.setStatus(shipping.getString("shipping_status"));
                             shipping1.setEstimate(shipping.getInt("shipping_time"));
                             shipping1.setDate(shipping.getString("created_at"));
@@ -103,6 +102,12 @@ public class HistoryFragment extends Fragment {
                             shippings.add(shipping1);
                         }
                         adapter = new HistoryAdapter(shippings, getContext());
+                        recyclerView.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                adapter.notifyDataSetChanged();
+                            }
+                        });
                         recyclerView.setAdapter(adapter);
                     }else {
                         Log.d("kahla", "cantik");

@@ -41,7 +41,6 @@
                 android:text="Pesanan Selesai"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#fff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +80,6 @@
 
 
             <TextView
-                android:gravity="center"
                 android:id="@+id/totalHarga"
                 android:layout_width="158dp"
                 android:layout_height="63dp"

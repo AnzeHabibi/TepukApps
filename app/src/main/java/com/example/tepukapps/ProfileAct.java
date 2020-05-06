@@ -73,7 +73,19 @@ public class ProfileAct extends AppCompatActivity {
                         startActivity(intentLogout);
                         Toast.makeText(ProfileAct.this, object.getString("message"), Toast.LENGTH_SHORT).show();
                     }else {
-                        Log.d("kahla", "cantik");
+                        preferences.edit().remove("id").apply();
+                        preferences.edit().remove("name").apply();
+                        preferences.edit().remove("email").apply();
+                        preferences.edit().remove("address").apply();
+                        preferences.edit().remove("phonenumber").apply();
+                        preferences.edit().remove("username").apply();
+                        preferences.edit().remove("password").apply();
+                        preferences.edit().remove("isLoggedIn").apply();
+                        Intent intentLogout = new Intent(ProfileAct.this, GetStarted.class);
+                        intentLogout.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intentLogout);
+                        Toast.makeText(ProfileAct.this, object.getString("message"), Toast.LENGTH_SHORT).show();
+                        Log.d("kahla", "gagal");
                     }
 
                 } catch (JSONException e) {

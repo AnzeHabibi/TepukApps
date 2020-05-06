@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_heroes"
+            android:id="@+id/rvTrack"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/tracking_item" />

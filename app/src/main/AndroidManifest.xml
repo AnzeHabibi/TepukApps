@@ -19,6 +19,7 @@
         <activity android:name=".SuccesBuy" />
         <activity android:name=".TrackingAct" />
         <activity android:name=".CartActivity" />
+        <activity android:name=".ProfileAct"/>
         <activity android:name=".PaymentAct" />
         <activity android:name=".Signup2" />
         <activity android:name=".SuccerRegister" />

@@ -3,18 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.OrganikFragment">
+    tools:context=".fragment.CartFragment">
     <FrameLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:scrollbars="vertical"
-            android:id="@+id/rvHistory"
+            android:id="@+id/rvHistoryDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/history_row"/>
+            tools:listitem="@layout/history_item"/>
 
     </FrameLayout>
 
