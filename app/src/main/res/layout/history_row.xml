@@ -26,12 +26,13 @@
 
             <ImageView
                 android:id="@+id/bgStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/BluePrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/headerijo" />
+                 />
 
             <TextView
                 android:id="@+id/tvStatus"
@@ -80,6 +81,7 @@
 
 
             <TextView
+                android:paddingTop="10dp"
                 android:id="@+id/totalHarga"
                 android:layout_width="158dp"
                 android:layout_height="63dp"

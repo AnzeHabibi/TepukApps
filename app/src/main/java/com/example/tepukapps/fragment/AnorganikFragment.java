@@ -1,15 +1,19 @@
 package com.example.tepukapps.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -19,6 +23,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.tepukapps.Constant;
 import com.example.tepukapps.PupukAdapter;
 import com.example.tepukapps.R;
+import com.example.tepukapps.dialog.CartDialog;
+import com.example.tepukapps.dialog.SessionDialog;
 import com.example.tepukapps.model.Pupuk;
 
 import org.json.JSONArray;
@@ -26,6 +32,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class AnorganikFragment extends Fragment {
@@ -33,6 +41,7 @@ public class AnorganikFragment extends Fragment {
     private View view;
     private ArrayList<Pupuk> arrayList;
     private PupukAdapter adapter;
+    private SharedPreferences userPref;
 
 
     public AnorganikFragment() {
@@ -56,7 +65,7 @@ public class AnorganikFragment extends Fragment {
 
     private void getPupuk() {
         arrayList = new ArrayList<>();
-
+        userPref = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
         StringRequest request = new StringRequest(Request.Method.GET, Constant.ANORGANIK, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -79,19 +88,35 @@ public class AnorganikFragment extends Fragment {
                         }
                         adapter = new PupukAdapter(getContext(),arrayList);
                         recyclerView.setAdapter(adapter);
+                    }else {
+                        openDialog();
                     }
                 } catch (JSONException e) {
+                    openDialog();
                     e.printStackTrace();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                openDialog();
             }
-        });
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                String token = userPref.getString("token","");
+                HashMap<String,String> map = new HashMap<>();
+                map.put("Authorization","Bearer "+token);
+                Log.d("ojan", String.valueOf(map));
+                return map;
+            }
+        };
 
         RequestQueue queue = Volley.newRequestQueue(getContext());
         queue.add(request);
+    }
+    private void openDialog() {
+        SessionDialog sessionDialog = new SessionDialog(getContext());
+        sessionDialog.show(getActivity().getSupportFragmentManager(),"sessionDialog");
     }
 }

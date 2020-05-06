@@ -139,6 +139,7 @@ public class Signin extends AppCompatActivity {
                         SharedPreferences userPref = getSharedPreferences("user",MODE_PRIVATE);
                         SharedPreferences.Editor editor = userPref.edit();
                         editor.putString("token",object.getString("token"));
+                        editor.putString("id",user.getString("id"));
                         editor.putString("name",user.getString("name"));
                         editor.putString("email",user.getString("email"));
                         editor.putString("username",user.getString("username"));

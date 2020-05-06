@@ -39,7 +39,7 @@ public class PupukAdapter extends RecyclerView.Adapter<PupukAdapter.ViewHolder> 
         Pupuk pupuk = pupuks.get(position);
         Picasso.get().load(Constant.URL+"storage/pupuk/"+pupuk.getPhoto()).into(holder.fotoPupuk);
         holder.namaPupuk.setText(pupuk.getName());
-        holder.hargaPupuk.setText(Integer.toString(pupuk.getPrice()));
+        holder.hargaPupuk.setText("Rp. " + pupuk.getPrice());
         holder.btnLihat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

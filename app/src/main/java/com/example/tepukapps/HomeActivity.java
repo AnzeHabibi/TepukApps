@@ -1,6 +1,8 @@
 package com.example.tepukapps;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -35,6 +37,8 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         changeFragment(new HomeFragment(),HomeFragment.class.getSimpleName());
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+
+
     }
 
 

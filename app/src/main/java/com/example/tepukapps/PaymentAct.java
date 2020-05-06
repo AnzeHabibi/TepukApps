@@ -50,7 +50,7 @@ public class PaymentAct extends AppCompatActivity {
         totalHarga = findViewById(R.id.totalHarga);
 
         SharedPreferences orderPred = getSharedPreferences("order", Context.MODE_PRIVATE);
-        totalHarga.setText(String.valueOf(orderPred.getInt("totalPayment",0)));
+        totalHarga.setText("RP."+ orderPred.getInt("totalPayment",0));
         totalPupuk.setText(String.valueOf(orderPred.getInt("totalPupuk",0)));
 
 
