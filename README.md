@@ -11,5 +11,20 @@ Perangkat lunak sudah menjadi bagian dari hidup kita sehari-hari, semua permasal
 1. Aplikasi ini harus terhubung dengan internet untuk melakukan pembelian pupuk.
 2. Petani yang cenderung jarang memakai ponsel harus terbiasa untuk membeli pupuk
 melalui ponsel mereka.
-3. Akses pengiriman pupuk ke tempat tempat terpencil akan sulit dijangkau
-4. Petani hanya bisa
+3. Akses pengiriman pupuk ke tempat tempat terpencil akan sulit dijangkau.
+4. Petani hanya bisa membeli pupuk di aplikasi ini, petani tidak bisa menjual pupuk lewat
+aplikasi ini
+# Deskripsi Aplikasi
+Alikasi ini bertujuan untuk mempermudah para petani dalam membeli pupuk hanya
+dengan *smartphone* yang mereka miliki. Aplikasi ini hanya memiliki satu sisi yaitu, sisi
+pengguna saja. Saat membuka aplikasi ini para petani diharuskan untuk login jika sudah punya
+akun atau sign up jika belum memiliki akun. Data yang harus dimiliki di akun adalah nama,
+email, nomor telepon dan alamat lengkap. Data ini bertujuan untuk mempermudah kita dalam
+men-validasi akun dan mengirim pupuk yang telah dipesan oleh petani.
+
+Fitur-fitur yang ada di aplikasi ini adalah fitur untuk membeli pupuk yang sesuai dengan
+kriteria dari yang diminta para petani yaitu fitur membeli pupuk secara online. Fitur inilah yang akan menjadi 
+*main feature* dari aplikasi kami.
+
+Aplikasi ini tidak memiliki banyak fitur karena memikirkan *user* kita yaitu petani, jika fitur yang diberikan terlalu banyak ditakutkan *stackholder* dari aplikasi yaitu petani akan kebinggungan saat menggunakan aplikasi ini. Hal tersebut juga ditinjau dari spesifikasi ponsel petani yang tidak memumpuni untuk bekerja dengan banyak fitur.
+#User Profile
