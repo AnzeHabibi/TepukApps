@@ -46,7 +46,13 @@ Target dari aplikasi kita adalah seorang petani yang kebingungan dalam mencari p
 ### Activity Diagram : Proses Pembayaran
 ![Untitled Diagram (8)](https://user-images.githubusercontent.com/60166820/81346394-69c9d680-90e4-11ea-8d30-be51e0dd4759.png)
 # Use Case Description
+
 # Activity Diagram
 # Gantt Cart
+### Trello
+![trello](https://user-images.githubusercontent.com/60166820/81347438-aaf1c480-90ab-11ea-9dc5-d548f49dbff5.png)
+### Team Gantt
+![team](https://user-images.githubusercontent.com/60166820/81347509-d5dc1880-90ab-11ea-9b83-bfdb8aa2c56d.jpg)
 # ERD
+![erd](https://user-images.githubusercontent.com/60166820/81347055-992d1300-90e5-11ea-8c07-dfcb5ff23e29.jpg)
 # Hasil Implementasi Perangkat Lunak
