@@ -39,6 +39,12 @@ Target dari aplikasi kita adalah seorang petani yang kebingungan dalam mencari p
  - Sebagai seorang petani, saya ingin membayar pembelian pupuk yang telah saya beli secara tatap muka untuk menghindari penipuan.
  - Sebagai seorang petani, saya ingin tau pupuk yang cocok untuk dipakai ditanaman saya.
 # Use Case Diagram
+### Activity Diagram : Memasukan Akun
+![Untitled Diagram (6)](https://user-images.githubusercontent.com/60166820/81346187-1061a780-90e4-11ea-8140-56fa97064098.png)
+### Activity Diagram : Proses Pembelian Pupuk
+![Untitled Diagram (7)](https://user-images.githubusercontent.com/60166820/81346271-371fde00-90e4-11ea-9d06-55892025c963.png)
+### Activity Diagram : Proses Pembayaran
+![Untitled Diagram (8)](https://user-images.githubusercontent.com/60166820/81346394-69c9d680-90e4-11ea-8d30-be51e0dd4759.png)
 # Use Case Description
 # Activity Diagram
 # Gantt Cart
