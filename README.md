@@ -1,9 +1,9 @@
 # TepukApps
 Aplikasi pembelian pupuk
 ## Anggota Kelompok 16
-1.Muhammad Abiyyu Habibi **G64190066**.
-2.Raden Rafly Ramadhan Fadhilah **G64180033**.
-3.Muhammad Fauzan Ramadhan **G6480117**.
+1. Muhammad Abiyyu Habibi **G64180066**
+2. Raden Rafly Ramadhan Fadhilah **G64180033**.
+3. 3.Muhammad Fauzan Ramadhan **G6480117**.
 # Latar Belakang
 Perangkat lunak sudah menjadi bagian dari hidup kita sehari-hari, semua permasalahan sudah sangat dibantu dengan adanya Perangkat lunak seperti *Mobile Apps*. Pemerintahan pun sudah mulai mengembangkan aplikas-aplikasi berbasis *Mobile Apps* untuk membantu dalam menyelesaikan masalah-masalah yang berhubungan dengan Pertanian. Disini kami menghadirkan sebuah invoasi berupa aplikasi pembelian pupuk online. Dimana para petani yang ataupun para pengembang perkebunan di perumahan dapat mendapatkan pupuk sesuai yang mereka butuhkan dan dengan cara yang praktis.
 # Tujuan
