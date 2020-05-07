@@ -38,4 +38,9 @@ Target dari aplikasi kita adalah seorang petani yang kebingungan dalam mencari p
  - Sebagai seorang petani, saya ingin tahu komposisi dari pupuk yang telah saya beli.
  - Sebagai seorang petani, saya ingin membayar pembelian pupuk yang telah saya beli secara tatap muka untuk menghindari penipuan.
  - Sebagai seorang petani, saya ingin tau pupuk yang cocok untuk dipakai ditanaman saya.
- 
+# Use Case Diagram
+# Use Case Description
+# Activity Diagram
+# Gantt Cart
+# ERD
+# Hasil Implementasi Perangkat Lunak
