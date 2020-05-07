@@ -28,3 +28,9 @@ kriteria dari yang diminta para petani yaitu fitur membeli pupuk secara online. 
 
 Aplikasi ini tidak memiliki banyak fitur karena memikirkan *user* kita yaitu petani, jika fitur yang diberikan terlalu banyak ditakutkan *stackholder* dari aplikasi yaitu petani akan kebinggungan saat menggunakan aplikasi ini. Hal tersebut juga ditinjau dari spesifikasi ponsel petani yang tidak memumpuni untuk bekerja dengan banyak fitur.
 # User Profile
+# User Story
+- Sebagai seorang petani, saya ingin membeli pupuk dengan mudah tanpa harus pergi keluar rumah karna toko pupuk jauh dari pemukiman.
+ - Sebagai seorang petani, saya ingin tahu komposisi dari pupuk yang telah saya beli.
+ - Sebagai seorang petani, saya ingin membayar pembelian pupuk yang telah saya beli secara tatap muka untuk menghindari penipuan.
+ - Sebagai seorang petani, saya ingin tau pupuk yang cocok untuk dipakai ditanaman saya.
+ 
