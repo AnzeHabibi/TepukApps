@@ -27,4 +27,4 @@ kriteria dari yang diminta para petani yaitu fitur membeli pupuk secara online. 
 *main feature* dari aplikasi kami.
 
 Aplikasi ini tidak memiliki banyak fitur karena memikirkan *user* kita yaitu petani, jika fitur yang diberikan terlalu banyak ditakutkan *stackholder* dari aplikasi yaitu petani akan kebinggungan saat menggunakan aplikasi ini. Hal tersebut juga ditinjau dari spesifikasi ponsel petani yang tidak memumpuni untuk bekerja dengan banyak fitur.
-#User Profile
+# User Profile
