@@ -28,7 +28,7 @@ men-validasi akun dan mengirim pupuk yang telah dipesan oleh petani.
 
 Fitur-fitur yang ada di aplikasi ini adalah fitur untuk membeli pupuk yang sesuai dengan
 kriteria dari yang diminta para petani yaitu fitur membeli pupuk secara online. Fitur inilah yang akan menjadi 
-*main feature* dari aplikasi kami.
+*main feature* dari aplikasi kami. Ada juga fitur tambahan seperti fitur *filter*, *tracking*, *history* dan juga *payment*. fitur-fitur ini akan menjadi pelengkap dari aplikasi **Tepukk**.
 
 Aplikasi ini tidak memiliki banyak fitur karena memikirkan *user* kita yaitu petani, jika fitur yang diberikan terlalu banyak ditakutkan *stackholder* dari aplikasi yaitu petani akan kebinggungan saat menggunakan aplikasi ini. Hal tersebut juga ditinjau dari spesifikasi ponsel petani yang tidak memumpuni untuk bekerja dengan banyak fitur.
 # User Profile
