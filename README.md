@@ -42,7 +42,7 @@ Target dari aplikasi kita adalah seorang petani yang kebingungan dalam mencari p
 ![Diagram (2)](https://user-images.githubusercontent.com/60166820/81347925-4b190f00-90e7-11ea-84b9-bb9575bd64e6.png)
 # Use Case Description
 ### Proses Pembayaran
-![273865](https://user-images.githubusercontent.com/60166820/81381545-1c2a8980-9137-11ea-8bf3-19180afd25b3.j
+![273865](https://user-images.githubusercontent.com/60166820/81382401-87289000-9138-11ea-96fd-591cb86cf838.jpg)
 ### Proses Pembelian
 ![273866](https://user-images.githubusercontent.com/60166820/81381578-251b5b00-9137-11ea-9848-5de2cfcfdc76.jpg)
 pg)
