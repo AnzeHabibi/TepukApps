@@ -61,4 +61,8 @@ pg)
 # ERD
 ![erd](https://user-images.githubusercontent.com/60166820/81347055-992d1300-90e5-11ea-8c07-dfcb5ff23e29.jpg)
 # Hasil Implementasi Perangkat Lunak
+## Penjelasan Singkat
+Kami telah membuat video berupa tampilan dari implementasi perangkat lunak yang telah kami buat. video ini menjadi bukti bahwa aplikasi kita sudah bisa dijalankan walau tidak maksimal. Kami berharap aplikasi kami bisa berguna kelak.
+### Link Video
+https://www.youtube.com/watch?v=j_pOXPedCBA&feature=youtu.be
 
