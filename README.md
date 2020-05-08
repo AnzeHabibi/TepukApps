@@ -41,7 +41,11 @@ Target dari aplikasi kita adalah seorang petani yang kebingungan dalam mencari p
 # Use Case Diagram
 ![Diagram (2)](https://user-images.githubusercontent.com/60166820/81347925-4b190f00-90e7-11ea-84b9-bb9575bd64e6.png)
 # Use Case Description
-
+### Proses Pembayaran
+![273865](https://user-images.githubusercontent.com/60166820/81381545-1c2a8980-9137-11ea-8bf3-19180afd25b3.j
+### Proses Pembelian
+![273866](https://user-images.githubusercontent.com/60166820/81381578-251b5b00-9137-11ea-9848-5de2cfcfdc76.jpg)
+pg)
 # Activity Diagram
 ### Activity Diagram : Memasukan Akun
 ![Untitled Diagram (6)](https://user-images.githubusercontent.com/60166820/81346187-1061a780-90e4-11ea-8140-56fa97064098.png)
@@ -57,3 +61,4 @@ Target dari aplikasi kita adalah seorang petani yang kebingungan dalam mencari p
 # ERD
 ![erd](https://user-images.githubusercontent.com/60166820/81347055-992d1300-90e5-11ea-8c07-dfcb5ff23e29.jpg)
 # Hasil Implementasi Perangkat Lunak
+
