@@ -45,6 +45,10 @@ Target dari aplikasi kita adalah seorang petani yang kebingungan dalam mencari p
 ![273865](https://user-images.githubusercontent.com/60166820/81382401-87289000-9138-11ea-96fd-591cb86cf838.jpg)
 ### Proses Pembelian
 ![273866](https://user-images.githubusercontent.com/60166820/81381578-251b5b00-9137-11ea-9848-5de2cfcfdc76.jpg)
+### Proses Melihat Jejak Pembelian
+![rpl1](https://user-images.githubusercontent.com/60166820/81923264-919acc00-9607-11ea-9db3-23a227db2e35.jpg)
+### Proses Melihat Pengiriman
+![rpl2](https://user-images.githubusercontent.com/60166820/81923389-cd359600-9607-11ea-88af-6d02cc7382fe.jpg)
 # Activity Diagram
 ### Activity Diagram : Memasukan Akun
 ![Untitled Diagram (6)](https://user-images.githubusercontent.com/60166820/81346187-1061a780-90e4-11ea-8140-56fa97064098.png)
